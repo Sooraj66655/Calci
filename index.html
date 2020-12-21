@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>
+            Calculator
+        </title>
+    </head>
+    <body>
+        <form name="calculator">
+            <div class="container col-md-3 mainDiv">
+                <div class="justify-content-md-center secondDiv">
+                    <!-------------------------------------------Calci Icon And Title------------------------------------->
+                    <h3 style="color: #F0ECEC;">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calculator" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M12 1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+                            <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-4z"/>
+                        </svg>
+                        Casio
+                        <sup>@</sup>
+                    </h3>
+                    <!----------------------------------------------Input Display------------------------------------------>
+                    <div class="inputDiv">
+                        <input type="text" name="display" id="display" class="form-control inputDisplay" placeholder="0" disabled="disabled">
+                    </div>
+                    <!--------------------------------------------First row (Clear , Delete, On/Off)------------------------->
+                    <div class="row">
+                        <div class="col-4">
+                            <input type="button" class="form-control inpBtn clrbtn" onclick="clearData();" value="CLEAR">
+                        </div>
+                        <div class="col-5">
+                            <input type="button" class="form-control inpBtn delBtn" onclick="deleteData();" value="DELETE">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn onBtn"
+                            onclick="toggle()" id="powerBtn" value="ON/OFF" >
+                        </div>
+                    </div>
+                    <!------------------------------------------------Second Row (7, 8, 9, +)--------------------------------->
+                    <div class="row">
+                        <div class="col-3">
+                            <input type="button" id="btn2" class="form-control inpBtn nbrBtn" onclick="dis('7')" value="7">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn nbrBtn" onclick="dis('8')" value="8">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn nbrBtn" onclick="dis('9')" value="9">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn oprBtn"  onclick="optr('+')" value="+">
+                        </div>
+                    </div>
+                    <!----------------------------------------------Third Row (4, 5, 6, -)------------------------------------>
+                    <div class="row">
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn nbrBtn" onclick="dis('4')" value="4">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn nbrBtn" onclick="dis('5')" value="5">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn nbrBtn" onclick="dis('6')" value="6">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn oprBtn"  onclick="optr('-')" value="-">
+                        </div>
+                    </div>
+                    <!-------------------------------------------Fourth Row (1, 2, 3, *)--------------------------------------->
+                    <div class="row">
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn nbrBtn" onclick="dis('1')" value="1">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn nbrBtn" onclick="dis('2')" value="2">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn nbrBtn"  onclick="dis('3')" value="3">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn oprBtn" id="multiBtn"  onclick="optr('*')" value="x">
+                        </div>
+                    </div>
+                    <!-----------------------------------------------Fifth Row( ., 0, =, /)--------------------------->
+                    <div class="row">
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn nbrBtn" onclick="dis('.')" value=".">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn nbrBtn" onclick="dis('0')" value="0">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn oprBtn" id="eqlBtn" onclick="Equal()" value="=">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="form-control inpBtn oprBtn" id="divideBtn"  onclick="optr('/')" value="/">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <script type="text/javascript" src="main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+.inpBtn {
+	box-shadow: 2px 1px 2px #A6A2A2;
+	margin: 2px 4px 2px 4px;
+}
+
+.inpBtn:active {
+	margin: 1px;
+}
+
+.inputDisplay {
+	background: transparent;
+	border: none;
+	background-color: #A4AF5C !important;
+	box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+	height: 60px;
+	font-size: 30px;
+	font-weight: bold;
+	font;
+	text-shadow: 1px 1px #B70928;
+	text-align: right;
+}
+
+.nbrBtn {
+	font-weight: bold;
+	font-weight: bold;
+	background-color: #A6A2A2 !important;
+	color: white;
+}
+
+.onBtn {
+	font-weight: bold;
+	font-size: 10px;
+	background-color: #cee9ea !important;
+	box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.oprBtn {
+	font-weight: bold;
+	background-color: #cee9ea !important;
+	box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.delBtn {
+	font-weight: bold;
+	box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.clrbtn {
+	background-color: #A40806 !important;
+	color: white !important;
+	box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+	font-weight: bold;
+}
+
+.row {
+	padding-top: 3% !important;
+}
+
+.inputDiv {
+	height: 70px;
+}
+
+sup {
+	font-size: 10px;
+}
+
+.mainDiv {
+	margin-top: 8%;
+	padding-bottom: 2%;
+	border: 3px solid black;
+	background-color: #4A4949;
+	border-radius: 0px 50px;
+	width: auto !important;
+}
+
+.secondDiv {
+	padding-top: 10%;
+	padding-bottom: 5%;
+
+}
+
